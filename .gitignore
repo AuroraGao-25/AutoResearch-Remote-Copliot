@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+
+# Local/session artifacts
+.copilot/
+
+# Large training artifacts
+experiments/**/results/**/checkpoint-*/
+experiments/**/results/**/adapter_model.safetensors
+experiments/**/results/**/optimizer.pt
+experiments/**/results/**/scheduler.pt
+experiments/**/results/**/rng_state.pth
+experiments/**/results/**/training_args.bin

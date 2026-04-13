@@ -1,0 +1,8 @@
+{
+  "n": 1758,
+  "accuracy": 0.8777019340159272,
+  "macro_f1": 0.8278492758717274,
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter_path": "experiments/h1-absa-rts-design/results/a1_adapter",
+  "test_file": "data/semeval14/all_test.jsonl"
+}

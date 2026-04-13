@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABSA Autoresearch Progress Report #001</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 28px; color: #111; }
+    h1, h2 { margin-bottom: 8px; }
+    .muted { color: #555; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 14px; margin: 12px 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f8f8f8; }
+    code { background: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>ABSA Autoresearch Progress Report #001</h1>
+  <p class="muted">Date: 2026-04-13 · Project: Beyond F1 (ABSA robustness)</p>
+
+  <div class="card">
+    <h2>Current Outcome</h2>
+    <p>
+      Research has been bootstrapped from the proposal into a working autoresearch workspace.
+      A literature-grounded experimental program is now locked with three testable hypotheses (H1-H3),
+      explicit robustness metrics, and a manuscript draft ready for empirical population.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>What Was Completed</h2>
+    <ul>
+      <li>Initialized project memory: <code>research-state.yaml</code>, <code>research-log.md</code>, <code>findings.md</code>.</li>
+      <li>Created literature library and synthesis in <code>literature/</code>.</li>
+      <li>Locked experiment protocols for H1-H3 in <code>experiments/</code>.</li>
+      <li>Drafted manuscript: <code>paper/absa_robustness_paper_draft.md</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Hypothesis Portfolio</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Claim</th><th>Status</th><th>Primary Metric</th></tr></thead>
+      <tbody>
+        <tr><td>H1</td><td>Largest deficits appear in negation/contrast/multi-aspect conflict</td><td>Active</td><td>Per-category ABSA-RTS metrics</td></tr>
+        <tr><td>H2</td><td>Metamorphic pass rate reveals failures beyond macro-F1</td><td>Pending execution</td><td>Pass rate vs macro-F1 relationship</td></tr>
+        <tr><td>H3</td><td>Targeted augmentation + QLoRA improves robustness with minimal trade-off</td><td>Pending execution</td><td>Category gains under size-matched ablations</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Research Insight So Far</h2>
+    <p>
+      The strongest contribution opportunity is methodological: diagnose ABSA brittleness with deterministic,
+      category-aware tests and then repair with targeted instruction augmentation, rather than optimizing only aggregate F1.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Immediate Next Inner-Loop Execution</h2>
+    <ol>
+      <li>Build ABSA-RTS slices per category/domain with annotation guideline checks.</li>
+      <li>Implement deterministic metamorphic transforms and scoring scripts.</li>
+      <li>Run A0/A1 baselines, then C1-C4 targeted augmentation ablations.</li>
+      <li>Populate results tables/figures in manuscript and findings.</li>
+    </ol>
+  </div>
+</body>
+</html>

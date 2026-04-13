@@ -1,0 +1,78 @@
+project:
+  title: "Beyond F1: Diagnostic Test Suites and Targeted Instruction Tuning for Robust ABSA"
+  question: "How can diagnostic testing and targeted instruction tuning improve robustness of instruction-tuned LLMs for aspect sentiment classification?"
+  status: active
+  started: "2026-04-13"
+  domain: "ABSA robustness evaluation and adaptation"
+
+literature:
+  key_papers:
+    - id: "pontiki2014semeval"
+      title: "SemEval-2014 Task 4: Aspect Based Sentiment Analysis"
+      authors: "Pontiki et al."
+      year: 2014
+      relevance: "Foundational ABSA benchmark definition for Restaurants/Laptops settings"
+    - id: "ribeiro2020checklist"
+      title: "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList"
+      authors: "Ribeiro et al."
+      year: 2020
+      relevance: "Behavioral testing framework that motivates category-based robustness diagnostics"
+    - id: "scaria2023instructabsa"
+      title: "InstructABSA: Instruction Learning for Aspect Based Sentiment Analysis"
+      authors: "Scaria et al."
+      year: 2023
+      relevance: "Instruction-tuning baseline and evidence that ABSA benefits from instruction-formatted supervision"
+    - id: "dettmers2023qlora"
+      title: "QLoRA: Efficient Finetuning of Quantized LLMs"
+      authors: "Dettmers et al."
+      year: 2023
+      relevance: "Practical finetuning recipe for constrained GPU environments"
+  open_problems:
+    - "Aggregate macro-F1 can hide phenomenon-specific reliability failures in ABSA"
+    - "ABSA-specific metamorphic tests are not standardized"
+    - "Targeted augmentation effects are often not isolated with size-matched ablations"
+  evidence_gaps:
+    - "Need per-category robustness evidence on negation/contrast/multi-aspect conflict"
+    - "Need relation analysis between metamorphic pass rate and standard metrics"
+    - "Need mapping from category-specific augmentations to category-specific gains"
+
+hypotheses:
+  - id: H1
+    statement: "Instruction-tuned ABSA baselines have the largest robustness drops on negation, contrast, and multi-aspect conflict categories."
+    status: active
+    motivation: "These phenomena are repeatedly reported as brittle in sentiment reasoning and discourse handling."
+    parent: null
+    priority: high
+  - id: H2
+    statement: "Metamorphic pass rate captures robustness failures that are weakly visible in macro-F1."
+    status: pending
+    motivation: "Behavioral testing focuses on transformation-consistency rather than aggregate label agreement."
+    parent: null
+    priority: high
+  - id: H3
+    statement: "Size-matched targeted instruction augmentation plus QLoRA improves category-specific robustness without degrading standard SemEval performance."
+    status: pending
+    motivation: "Instruction-targeted finetuning should improve specific linguistic behaviors when ablated carefully."
+    parent: null
+    priority: high
+
+experiments:
+  proxy_metric: "Metamorphic pass rate (overall and per category), with macro-F1 as guardrail"
+  baseline_value: null
+  best_value: null
+  total_runs: 0
+  trajectory: []
+
+outer_loop:
+  cycle: 1
+  last_direction: "deepen"
+  last_reflection: "Proposal and literature support a testing-first ABSA robustness program; next step is ABSA-RTS construction."
+
+workspace:
+  findings: "findings.md"
+  log: "research-log.md"
+  literature_dir: "literature/"
+  experiments_dir: "experiments/"
+  to_human_dir: "to_human/"
+  paper_dir: "paper/"
+

@@ -1,0 +1,56 @@
+{
+  "restaurants_train": {
+    "count": 3602,
+    "sentiment_dist": {
+      "negative": 805,
+      "positive": 2164,
+      "neutral": 633
+    },
+    "source_file": "data/raw/SemEval14/Train/Restaurants_Train.csv"
+  },
+  "restaurants_test": {
+    "count": 1120,
+    "sentiment_dist": {
+      "positive": 728,
+      "neutral": 196,
+      "negative": 196
+    },
+    "source_file": "data/raw/SemEval14/Test/Restaurants_Test.csv"
+  },
+  "laptops_train": {
+    "count": 2313,
+    "sentiment_dist": {
+      "neutral": 460,
+      "positive": 987,
+      "negative": 866
+    },
+    "source_file": "data/raw/SemEval14/Train/Laptops_Train.csv"
+  },
+  "laptops_test": {
+    "count": 638,
+    "sentiment_dist": {
+      "positive": 341,
+      "negative": 128,
+      "neutral": 169
+    },
+    "source_file": "data/raw/SemEval14/Test/Laptops_Test.csv"
+  },
+  "all_train": {
+    "count": 5915,
+    "sentiment_dist": {
+      "negative": 1671,
+      "positive": 3151,
+      "neutral": 1093
+    },
+    "written_rows": 5915
+  },
+  "all_test": {
+    "count": 1758,
+    "sentiment_dist": {
+      "positive": 1069,
+      "neutral": 365,
+      "negative": 324
+    },
+    "written_rows": 1758
+  }
+}

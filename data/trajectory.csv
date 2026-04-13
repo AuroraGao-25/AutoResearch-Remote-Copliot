@@ -1,0 +1,3 @@
+run_id,hypothesis,metric_name,metric_value,baseline,delta,wall_time_min,change_summary,timestamp
+bootstrap_001,H1,metamorphic_pass_rate,,,,,Workspace and hypotheses initialized,2026-04-13T09:14:46Z
+impl_002,H1,pipeline_readiness,1,,,,,Implemented SemEval-2014 prep + Qwen A0/A1 QLoRA train/eval scripts,2026-04-13T09:33:07Z

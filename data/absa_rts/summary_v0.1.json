@@ -1,0 +1,19 @@
+{
+  "input_rows": 1758,
+  "selected_rows": 565,
+  "per_category_per_domain": 50,
+  "counts": {
+    "laptops::contrast": 44,
+    "laptops::implicit_sentiment": 50,
+    "laptops::intensifier": 50,
+    "laptops::multi_aspect_conflict": 26,
+    "laptops::negation": 50,
+    "laptops::neutral_irrelevant": 50,
+    "restaurants::contrast": 50,
+    "restaurants::implicit_sentiment": 50,
+    "restaurants::intensifier": 50,
+    "restaurants::multi_aspect_conflict": 45,
+    "restaurants::negation": 50,
+    "restaurants::neutral_irrelevant": 50
+  }
+}

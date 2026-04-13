@@ -1,0 +1,8 @@
+{
+  "n": 1758,
+  "accuracy": 0.8447098976109215,
+  "macro_f1": 0.7639259372398394,
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter_path": null,
+  "test_file": "data/semeval14/all_test.jsonl"
+}
