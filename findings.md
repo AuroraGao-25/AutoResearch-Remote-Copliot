@@ -27,11 +27,18 @@ Completed H2 metamorphic evaluation (n=3352 transformations/model) shows:
 - **Largest category gain:** `neutral_irrelevant` (A0 0.5126 → A1 0.6843).
 - **Largest category drop:** `multi_aspect_conflict` (A0 0.8841 → A1 0.8152).
 
+Completed first H3 ablation run (**C2 contrast-only augmentation**) shows a negative result:
+
+- SemEval: accuracy 0.8737, macro-F1 0.8133 (both below A1).
+- Metamorphic pass rate: 0.8198 (below A1 0.8586).
+- `flip_contrast_template` pass rate dropped further (A1 0.7195 → C2 0.6148).
+
 ## Patterns and Insights
 
 1. Parameter-efficient adaptation (A1 QLoRA) gives a meaningful quality lift over prompt-only A0 on standard SemEval metrics.
 2. H2 is supported: macro-F1 improves substantially in A1, but metamorphic behavior is mixed and transformation-dependent.
 3. Robustness improvements are not monotonic; A1 helps invariance consistency but introduces a large contrast-flip weakness.
+4. Initial H3 evidence suggests naive contrast-only augmentation is not sufficient and can overfit in the wrong direction.
 
 ## Lessons and Constraints
 
@@ -43,7 +50,7 @@ Completed H2 metamorphic evaluation (n=3352 transformations/model) shows:
 ## Open Questions
 
 - What specific prompt/output patterns cause A1 failures on `flip_contrast_template` and `multi_aspect_conflict`?
-- Can targeted augmentation focused on contrast/discourse restore these weak spots without harming A1 gains on neutral/irrelevant handling?
+- Can C1 (negation), C3 (multi-aspect), or C4 (all categories) recover robustness without C2-style regressions?
 - Does category-targeted augmentation generalize across domains (Restaurants ↔ Laptops), or is transfer narrow?
 - Which failure classes persist even after targeted augmentation (candidate future-work boundary)?
 
@@ -58,3 +65,4 @@ Primary trajectory metric is now measured:
 
 - A0 metamorphic pass rate: 0.8598
 - A1 metamorphic pass rate: 0.8586
+- H3 C2 metamorphic pass rate: 0.8198

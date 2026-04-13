@@ -105,6 +105,14 @@ H2 metamorphic robustness evaluation for A0/A1 is complete (n=3352 transformatio
 
 These outcomes support the main thesis that aggregate metrics and behavioral robustness can diverge materially.
 
+First H3 targeted-augmentation result (C2: contrast-only) is now available:
+
+- SemEval: accuracy 0.8737, macro-F1 0.8133 (below A1).
+- Metamorphic pass rate: 0.8198 (below A1 0.8586).
+- `flip_contrast_template` pass rate worsened relative to A1 (0.7195 -> 0.6148).
+
+This negative result is informative: naive category-targeted augmentation does not automatically improve robustness and can regress both aggregate and behavioral metrics.
+
 ## References
 
 - Pontiki et al. (2014). *SemEval-2014 Task 4: Aspect Based Sentiment Analysis*. DOI: 10.3115/v1/S14-2004.

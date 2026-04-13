@@ -16,3 +16,7 @@ Chronological record of research decisions and actions. Append-only.
 | 10 | 2026-04-13 | inner-loop | Launched H2 metamorphic robustness evaluation (`run_h2_a0_a1.sh`) for A0 and A1; run in progress. |
 | 11 | 2026-04-13 | results | Completed H2 metamorphic evaluation: overall pass rates nearly equal (A0 0.8598 vs A1 0.8586), but large transformation-level divergence (A1 improved invariance tests, regressed strongly on contrast-flip). |
 | 12 | 2026-04-13 | outer-loop | H2 marked supported: macro-F1 and metamorphic robustness do not move uniformly; next step is H3 targeted augmentation focused on contrast/multi-aspect weaknesses. |
+| 13 | 2026-04-13 | inner-loop | Implemented H3 execution tooling (`build_h3_datasets.py`, `run_h3_condition.sh`) and launched C2 (+Contrast) targeted augmentation run. |
+| 14 | 2026-04-13 | results | Completed H3 C2 run: SemEval macro-F1 0.8133 (vs A1 0.8278) and metamorphic pass rate 0.8198 (vs A1 0.8586); contrast-only augmentation underperformed baseline. |
+| 15 | 2026-04-13 | outer-loop | Decided to continue H3 with C1/C3/C4 ablations after C2 negative result to identify stable targeted gains. |
+| 16 | 2026-04-13 | outer-loop | Completed light interim analysis while C3 runs: C1/C2 both regress vs A1 (macro-F1 and pass-rate), so drafted `experiments/h3-targeted-augmentation-plan/protocol_v2.md` with a small lower-strength grid (`ADD_PER_CONDITION` 200/400) to run after H3-v1 completes. |

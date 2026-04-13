@@ -51,7 +51,7 @@ hypotheses:
     priority: high
   - id: H3
     statement: "Size-matched targeted instruction augmentation plus QLoRA improves category-specific robustness without degrading standard SemEval performance."
-    status: pending
+    status: active
     motivation: "Instruction-targeted finetuning should improve specific linguistic behaviors when ablated carefully."
     parent: null
     priority: high
@@ -60,7 +60,7 @@ experiments:
   proxy_metric: "Metamorphic pass rate (overall and per category), with macro-F1 as guardrail"
   baseline_value: null
   best_value: null
-  total_runs: 4
+  total_runs: 6
   trajectory:
     - run_id: "h1_a0"
       hypothesis: "H1"
@@ -94,11 +94,27 @@ experiments:
       delta: -0.0011933174224343368
       wall_time_min: null
       change_summary: "Metamorphic pass-rate with A1 QLoRA adapter"
+    - run_id: "h3_c2_macro_f1"
+      hypothesis: "H3"
+      metric_name: "macro_f1"
+      metric_value: 0.8132562065113708
+      baseline: 0.8278492758717274
+      delta: -0.0145930693603566
+      wall_time_min: null
+      change_summary: "C2 (+Contrast only) targeted augmentation SemEval macro-F1"
+    - run_id: "h3_c2_pass_rate"
+      hypothesis: "H3"
+      metric_name: "metamorphic_pass_rate"
+      metric_value: 0.8198090692124105
+      baseline: 0.8585918854415274
+      delta: -0.0387828162291169
+      wall_time_min: null
+      change_summary: "C2 (+Contrast only) targeted augmentation metamorphic pass rate"
 
 outer_loop:
-  cycle: 3
+  cycle: 4
   last_direction: "deepen"
-  last_reflection: "H2 confirms divergence between aggregate and behavioral metrics: A1 improves macro-F1 but shows mixed metamorphic behavior with strong contrast-specific regressions."
+  last_reflection: "H3 C2 negative result: contrast-only augmentation reduced both macro-F1 and metamorphic pass rate; proceed with C1/C3/C4 ablations to isolate beneficial targeting."
 
 workspace:
   findings: "findings.md"

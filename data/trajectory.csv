@@ -5,3 +5,5 @@ h1_a0,H1,macro_f1,0.7639259372398394,,,,"Prompt-only Qwen baseline on SemEval-20
 h1_a1,H1,macro_f1,0.8278492758717274,0.7639259372398394,0.063923338631888,,"QLoRA A1 on SemEval-2014 test",2026-04-13T12:50:38Z
 h2_a0,H2,metamorphic_pass_rate,0.8597852028639618,,,,"Metamorphic baseline pass rate (A0)",2026-04-13T13:51:00Z
 h2_a1,H2,metamorphic_pass_rate,0.8585918854415274,0.8597852028639618,-0.0011933174224343368,,"Metamorphic pass rate with A1 adapter",2026-04-13T13:51:00Z
+h3_c2_macro_f1,H3,macro_f1,0.8132562065113708,0.8278492758717274,-0.0145930693603566,174,"C2 contrast-only augmentation on SemEval test",2026-04-13T16:55:11Z
+h3_c2_pass_rate,H3,metamorphic_pass_rate,0.8198090692124105,0.8585918854415274,-0.0387828162291169,174,"C2 contrast-only augmentation on metamorphic suite",2026-04-13T16:55:11Z
