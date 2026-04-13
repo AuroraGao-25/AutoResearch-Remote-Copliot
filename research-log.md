@@ -11,3 +11,8 @@ Chronological record of research decisions and actions. Append-only.
 | 5 | 2026-04-13 | inner-loop | Implemented executable baseline pipeline for SemEval-2014 with Qwen: XML parser + JSONL prep, QLoRA training script, A0/A1 evaluation script, and one-command runner (`run_a0_a1.sh`). |
 | 6 | 2026-04-13 | inner-loop | Updated pipeline to SemEval-2014 CSV input, prepared 5,915 train / 1,758 test ASC samples, and launched full A0→A1 baseline run for `Qwen/Qwen2.5-7B-Instruct`. |
 | 7 | 2026-04-13 | inner-loop | Implemented next-step robustness tooling: ABSA-RTS v0.1 builder, metamorphic suite generator, metamorphic pass-rate evaluator, and H2 runner script for A0/A1. |
+| 8 | 2026-04-13 | inner-loop | Recovered A1 training after a Transformers API incompatibility (`evaluation_strategy` vs `eval_strategy`) and completed A1 train+eval successfully. |
+| 9 | 2026-04-13 | results | Finalized H1 baseline comparison on SemEval-2014 test: A0 macro-F1 0.7639 / acc 0.8447 vs A1 macro-F1 0.8278 / acc 0.8777. |
+| 10 | 2026-04-13 | inner-loop | Launched H2 metamorphic robustness evaluation (`run_h2_a0_a1.sh`) for A0 and A1; run in progress. |
+| 11 | 2026-04-13 | results | Completed H2 metamorphic evaluation: overall pass rates nearly equal (A0 0.8598 vs A1 0.8586), but large transformation-level divergence (A1 improved invariance tests, regressed strongly on contrast-flip). |
+| 12 | 2026-04-13 | outer-loop | H2 marked supported: macro-F1 and metamorphic robustness do not move uniformly; next step is H3 targeted augmentation focused on contrast/multi-aspect weaknesses. |

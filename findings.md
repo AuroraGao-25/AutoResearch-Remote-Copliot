@@ -12,18 +12,26 @@ Instruction tuning has already shown strong ABSA performance (InstructABSA), and
 
 ## Key Results
 
-No model experiments have been executed yet in this environment. The main completed output is a **research-operational blueprint**:
+Completed baseline experiments (SemEval-2014 test, n=1758) show clear gains from QLoRA tuning:
 
-- Locked high-priority hypotheses (H1-H3) tied to measurable outcomes.
-- Defined ABSA-RTS category set and metamorphic testing behavior expectations.
-- Defined ablation structure (single-category and all-category targeted augmentation with size matching).
-- Prepared paper draft and progress report artifacts for immediate execution phase.
+- **A0 (prompt-only Qwen2.5-7B-Instruct):** accuracy 0.8447, macro-F1 0.7639.
+- **A1 (QLoRA on SemEval-2014 train):** accuracy 0.8777, macro-F1 0.8278.
+- **Delta (A1 - A0):** +0.0330 accuracy, +0.0639 macro-F1.
+
+Operationally, the A0→A1 pipeline is now stable in this environment after resolving a Transformers API mismatch (`evaluation_strategy` vs `eval_strategy`) in training arguments.
+
+Completed H2 metamorphic evaluation (n=3352 transformations/model) shows:
+
+- **Overall pass rate:** A0 0.8598 vs A1 0.8586 (near-equal, slight A1 drop of 0.0012).
+- **Strong divergence by transform family:** A1 improves invariance transforms but degrades `flip_contrast_template`.
+- **Largest category gain:** `neutral_irrelevant` (A0 0.5126 → A1 0.6843).
+- **Largest category drop:** `multi_aspect_conflict` (A0 0.8841 → A1 0.8152).
 
 ## Patterns and Insights
 
-1. The strongest methodological opportunity is not a new architecture but **better test design** and **targeted data intervention**.
-2. Metamorphic pass rate is likely to surface hidden brittleness even when macro-F1 remains stable.
-3. A robust contribution can be made even if standard metrics move modestly, provided per-category reliability gains are clear and reproducible.
+1. Parameter-efficient adaptation (A1 QLoRA) gives a meaningful quality lift over prompt-only A0 on standard SemEval metrics.
+2. H2 is supported: macro-F1 improves substantially in A1, but metamorphic behavior is mixed and transformation-dependent.
+3. Robustness improvements are not monotonic; A1 helps invariance consistency but introduces a large contrast-flip weakness.
 
 ## Lessons and Constraints
 
@@ -34,12 +42,19 @@ No model experiments have been executed yet in this environment. The main comple
 
 ## Open Questions
 
-- Which ABSA-RTS categories have the largest baseline failure rate for A0 vs A1?
-- How strongly does metamorphic pass rate correlate with macro-F1 at overall and per-category levels?
+- What specific prompt/output patterns cause A1 failures on `flip_contrast_template` and `multi_aspect_conflict`?
+- Can targeted augmentation focused on contrast/discourse restore these weak spots without harming A1 gains on neutral/irrelevant handling?
 - Does category-targeted augmentation generalize across domains (Restaurants ↔ Laptops), or is transfer narrow?
 - Which failure classes persist even after targeted augmentation (candidate future-work boundary)?
 
 ## Optimization Trajectory
 
-Execution phase not started yet. The planned trajectory metric is metamorphic pass rate (overall and per category) with macro-F1 guardrails.
+Execution has started. Guardrail metric trajectory so far:
 
+- A0 macro-F1: 0.7639
+- A1 macro-F1: 0.8278
+
+Primary trajectory metric is now measured:
+
+- A0 metamorphic pass rate: 0.8598
+- A1 metamorphic pass rate: 0.8586

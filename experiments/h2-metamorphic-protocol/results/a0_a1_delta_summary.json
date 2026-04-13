@@ -1,0 +1,78 @@
+{
+  "n_common": 3352,
+  "switch_counts": {
+    "pass->pass": 2690,
+    "fail->fail": 282,
+    "pass->fail": 192,
+    "fail->pass": 188
+  },
+  "switch_rate": {
+    "pass->pass": 0.8025059665871122,
+    "fail->fail": 0.08412887828162291,
+    "pass->fail": 0.057279236276849645,
+    "fail->pass": 0.05608591885441527
+  },
+  "by_transform": {
+    "invariance_irrelevant_clause": {
+      "pass->pass": 754,
+      "fail->fail": 110,
+      "fail->pass": 96,
+      "pass->fail": 28
+    },
+    "invariance_reorder_context": {
+      "pass->pass": 770,
+      "fail->fail": 115,
+      "fail->pass": 75,
+      "pass->fail": 28
+    },
+    "flip_negation_template": {
+      "pass->pass": 688
+    },
+    "flip_contrast_template": {
+      "fail->fail": 57,
+      "pass->pass": 478,
+      "pass->fail": 136,
+      "fail->pass": 17
+    }
+  },
+  "by_category": {
+    "contrast": {
+      "pass->pass": 418,
+      "fail->fail": 45,
+      "pass->fail": 30,
+      "fail->pass": 19
+    },
+    "implicit_sentiment": {
+      "pass->pass": 745,
+      "fail->fail": 17,
+      "pass->fail": 31,
+      "fail->pass": 7
+    },
+    "intensifier": {
+      "pass->pass": 614,
+      "pass->fail": 22,
+      "fail->fail": 18,
+      "fail->pass": 18
+    },
+    "multi_aspect_conflict": {
+      "pass->pass": 215,
+      "fail->fail": 22,
+      "pass->fail": 29,
+      "fail->pass": 10
+    },
+    "negation": {
+      "pass->pass": 515,
+      "pass->fail": 60,
+      "fail->fail": 75,
+      "fail->pass": 46
+    },
+    "neutral_irrelevant": {
+      "pass->pass": 183,
+      "fail->fail": 105,
+      "fail->pass": 88,
+      "pass->fail": 20
+    }
+  },
+  "n_regressions": 192,
+  "n_improvements": 188
+}

@@ -1,0 +1,26 @@
+{
+  "n": 3352,
+  "pass_rate": 0.8585918854415274,
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter_path": "experiments/h1-absa-rts-design/results/a1_adapter",
+  "transform_distribution": {
+    "invariance_irrelevant_clause": 988,
+    "invariance_reorder_context": 988,
+    "flip_negation_template": 688,
+    "flip_contrast_template": 688
+  },
+  "pass_rate_by_transform": {
+    "flip_contrast_template": 0.7194767441860465,
+    "flip_negation_template": 1.0,
+    "invariance_irrelevant_clause": 0.8603238866396761,
+    "invariance_reorder_context": 0.8552631578947368
+  },
+  "pass_rate_by_source_category": {
+    "contrast": 0.853515625,
+    "implicit_sentiment": 0.94,
+    "intensifier": 0.9404761904761905,
+    "multi_aspect_conflict": 0.8152173913043478,
+    "negation": 0.8060344827586207,
+    "neutral_irrelevant": 0.6843434343434344
+  }
+}

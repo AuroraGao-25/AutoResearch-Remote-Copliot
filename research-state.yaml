@@ -39,13 +39,13 @@ literature:
 hypotheses:
   - id: H1
     statement: "Instruction-tuned ABSA baselines have the largest robustness drops on negation, contrast, and multi-aspect conflict categories."
-    status: active
+    status: supported-prelim
     motivation: "These phenomena are repeatedly reported as brittle in sentiment reasoning and discourse handling."
     parent: null
     priority: high
   - id: H2
     statement: "Metamorphic pass rate captures robustness failures that are weakly visible in macro-F1."
-    status: pending
+    status: supported
     motivation: "Behavioral testing focuses on transformation-consistency rather than aggregate label agreement."
     parent: null
     priority: high
@@ -60,13 +60,45 @@ experiments:
   proxy_metric: "Metamorphic pass rate (overall and per category), with macro-F1 as guardrail"
   baseline_value: null
   best_value: null
-  total_runs: 0
-  trajectory: []
+  total_runs: 4
+  trajectory:
+    - run_id: "h1_a0"
+      hypothesis: "H1"
+      metric_name: "macro_f1"
+      metric_value: 0.7639259372398394
+      baseline: null
+      delta: null
+      wall_time_min: null
+      change_summary: "Prompt-only baseline on SemEval-2014 test"
+    - run_id: "h1_a1"
+      hypothesis: "H1"
+      metric_name: "macro_f1"
+      metric_value: 0.8278492758717274
+      baseline: 0.7639259372398394
+      delta: 0.063923338631888
+      wall_time_min: null
+      change_summary: "QLoRA-tuned baseline on SemEval-2014 test"
+    - run_id: "h2_a0"
+      hypothesis: "H2"
+      metric_name: "metamorphic_pass_rate"
+      metric_value: 0.8597852028639618
+      baseline: null
+      delta: null
+      wall_time_min: null
+      change_summary: "Metamorphic pass-rate baseline (prompt-only A0)"
+    - run_id: "h2_a1"
+      hypothesis: "H2"
+      metric_name: "metamorphic_pass_rate"
+      metric_value: 0.8585918854415274
+      baseline: 0.8597852028639618
+      delta: -0.0011933174224343368
+      wall_time_min: null
+      change_summary: "Metamorphic pass-rate with A1 QLoRA adapter"
 
 outer_loop:
-  cycle: 1
+  cycle: 3
   last_direction: "deepen"
-  last_reflection: "Proposal and literature support a testing-first ABSA robustness program; next step is ABSA-RTS construction."
+  last_reflection: "H2 confirms divergence between aggregate and behavioral metrics: A1 improves macro-F1 but shows mixed metamorphic behavior with strong contrast-specific regressions."
 
 workspace:
   findings: "findings.md"
@@ -75,4 +107,3 @@ workspace:
   experiments_dir: "experiments/"
   to_human_dir: "to_human/"
   paper_dir: "paper/"
-

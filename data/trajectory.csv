@@ -1,3 +1,7 @@
 run_id,hypothesis,metric_name,metric_value,baseline,delta,wall_time_min,change_summary,timestamp
 bootstrap_001,H1,metamorphic_pass_rate,,,,,Workspace and hypotheses initialized,2026-04-13T09:14:46Z
 impl_002,H1,pipeline_readiness,1,,,,,Implemented SemEval-2014 prep + Qwen A0/A1 QLoRA train/eval scripts,2026-04-13T09:33:07Z
+h1_a0,H1,macro_f1,0.7639259372398394,,,,"Prompt-only Qwen baseline on SemEval-2014 test",2026-04-13T12:50:38Z
+h1_a1,H1,macro_f1,0.8278492758717274,0.7639259372398394,0.063923338631888,,"QLoRA A1 on SemEval-2014 test",2026-04-13T12:50:38Z
+h2_a0,H2,metamorphic_pass_rate,0.8597852028639618,,,,"Metamorphic baseline pass rate (A0)",2026-04-13T13:51:00Z
+h2_a1,H2,metamorphic_pass_rate,0.8585918854415274,0.8597852028639618,-0.0011933174224343368,,"Metamorphic pass rate with A1 adapter",2026-04-13T13:51:00Z

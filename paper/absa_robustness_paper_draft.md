@@ -92,7 +92,18 @@ SemEval ABSA domains: Restaurants and Laptops (English). ABSA-RTS remains strict
 
 ## 7. Current Status
 
-This draft captures the finalized research design and literature-backed positioning. Empirical execution and result tables/figures are pending the next inner-loop phase (dataset construction, model runs, and ablation evaluation).
+This draft captures the finalized research design and literature-backed positioning. Baseline execution is now complete for A0 and A1 on SemEval-2014 test:
+
+- A0: accuracy 0.8447, macro-F1 0.7639
+- A1: accuracy 0.8777, macro-F1 0.8278
+
+H2 metamorphic robustness evaluation for A0/A1 is complete (n=3352 transformations/model):
+
+- Overall pass-rate is nearly identical: A0 0.8598 vs A1 0.8586.
+- Transformation-level behavior diverges: A1 improves invariance transforms (`invariance_irrelevant_clause`, `invariance_reorder_context`) but drops sharply on `flip_contrast_template` (0.8924 -> 0.7195).
+- Category-level shifts are mixed: strongest gain on `neutral_irrelevant` (0.5126 -> 0.6843), largest drop on `multi_aspect_conflict` (0.8841 -> 0.8152).
+
+These outcomes support the main thesis that aggregate metrics and behavioral robustness can diverge materially.
 
 ## References
 
@@ -105,4 +116,3 @@ This draft captures the finalized research design and literature-backed position
 - Dettmers et al. (2023). *QLoRA: Efficient Finetuning of Quantized LLMs*. arXiv:2305.14314.
 - Scaria et al. (2023). *InstructABSA: Instruction Learning for Aspect Based Sentiment Analysis*. arXiv:2302.08624.
 - Simmering & Huoviala (2023). *Large language models for aspect-based sentiment analysis*. arXiv:2310.18025.
-
